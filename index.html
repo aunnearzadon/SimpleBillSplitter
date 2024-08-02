@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple bill splitter</title>
+    <style>
+      body {
+          height: 100vh;
+          margin: 0;
+      }
+      .flex {
+        display: flex;
+      }
+      .left, .right {
+          width: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      .column {
+        flex-direction: column;
+      }
+      .left input, .left button {
+          margin: 10px 0;
+      }
+  </style>
+</head>
+<body class="flex">
+    <div class="left column">
+      <fieldset class="">
+        <label>This Person: </label>
+        <select id="members"></select>
+        <label>Paid: </label>
+        <input id="amount" type="number" placeholder="Ex. 10" />
+        <label>For: </label>
+        <input id="description" type="text" placeholder="Ex. drinks" />
+        <button id="add-expense">Add Expense</button>
+      </fieldset>
+      <div class="flex">
+        <fieldset class="">
+          <label>Add Member:</label>  
+          <input id="new-member" type="text" placeholder="Ex. John" />
+          <button id="add-member">Add Member</button>
+          <div class="column">
+            <h5>Members: </h5>
+            <div class="column" id="members-list"></div>  
+          </div>  
+        </fieldset>
+      </div>
+    </div>
+    <div class="right column">
+        <!-- Right side content -->
+        <div>
+          <h2>Total: <span id="total-expenses">0</span></h2>
+          <h2>Divided by <span id="members-count">0</span></h2>
+        </div>
+        <div class="flex">
+          <fieldset class="">
+            <h2>Expenses</h2>
+            <div id="expenses-list">
+              <p>No expenses to show</p>
+            </div>
+          </fieldset>
+          <fieldset class="">
+            <h2>Breakdown</h2>
+            <h3>Per person: <span id="cost-per-person"></span></h3>
+            <div id="expenses-breakdown">
+              <p>Nothing to show</p>
+            </div>
+          </fieldset>  
+        </div>
+    </div>
+    <script src="main.js" type="text/javascript"></script>
+  </body>
+</html>
